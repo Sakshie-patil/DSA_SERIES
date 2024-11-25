@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+double binaryexpo(double x , int n) {
+    double ans =1 ;
+    long binaryform = n;
+    if( n < 0) {
+         x= 1/x;
+         binaryform = - binaryform;
+    }
+    while(binaryform > 0) {
+        if( binaryform % 2 == 1) {
+             ans = ans * x;
+        }
+        x = x * x;
+        binaryform = binaryform / 2;
+    }
+    return ans;
+}
+
+
+int main() {
+    double x;
+    int n;
+    cout<<"enter value of x and n: ";
+    cin>>x>>n;
+   double val=binaryexpo( x ,  n);
+   cout<<val;
+}
