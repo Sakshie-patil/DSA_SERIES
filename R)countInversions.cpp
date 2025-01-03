@@ -1,3 +1,26 @@
+/// brute force approach
+time complexity: O(n^2)
+int countInversions(vector<int>&arr , int n) {
+    int invCount=0;
+    for(int i=0;i<n;i++) {
+        for(int j=i+1;j<n;j++) {
+            if(arr[i] > arr[j]) {
+                invCount++;
+            }
+        }
+    }
+    return invCount;
+}
+
+
+///optimal approach
+time complexity : O(nlogn)
+int main() {
+    vector <int> arr = {6,3,5,2,7};
+    int n=arr.size();
+   cout<<countInversions(arr,n);
+}
+
 int merge(vector<int>&arr , int st ,int mid, int end) {
     vector<int>temp;
     int i=st;
