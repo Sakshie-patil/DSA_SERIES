@@ -26,7 +26,7 @@ public:
     }
     
     //inserts value in front
-    void push_front(int val) {
+    void push_front(int val) {     //0(1)
         node* newNode = new node(val);
         if(head==NULL) {
             head = tail = newNode;
@@ -38,7 +38,7 @@ public:
     }
     
     //insert value in end
-    void push_back(int val) {
+    void push_back(int val) {     //0(1)
         node* newNode = new node(val);
         if(head==NULL) {
             head=tail=newNode;
@@ -49,7 +49,7 @@ public:
     }
     
     //removes element from front
-    void pop_front() {
+    void pop_front() {     //0(1)
         if(head == NULL) {
             cout<<"linked list in empty";
         } else {
@@ -61,7 +61,7 @@ public:
     }
     
     //removes element from end
-    void pop_back() {
+    void pop_back() {     //0(n)
         if(head==NULL) {
             cout<<"Linked list is empty";
             return;
@@ -78,7 +78,7 @@ public:
     }
     
     //insert at any guven position
-    void insert(int val,int pos) {
+    void insert(int val,int pos) {     //0(n)
         if(pos<0) {
             cout<<"invalid position";
             return;
@@ -99,7 +99,7 @@ public:
     }
     
     //print the linkedList
-    void printLL() {
+    void printLL() {     //0(n)
         node* temp = head;
         
         while(temp != NULL) {
@@ -108,9 +108,27 @@ public:
         }
         cout<<endl;
     }
+
+    //search for the particular key
+    int search(int key) {
+        node* temp = head;
+        int idx=0;
+        
+        while(temp != NULL) {
+            if(temp->data == key) {
+                return idx;
+            }
+            temp = temp->next;
+            idx++;
+        }
+        
+        return -1;
+    }
 };
 
 int main() {
+
+    // call the function one by one
     list ll;
     ll.push_front(3);
     ll.push_front(2);
@@ -122,7 +140,9 @@ int main() {
     
     ll.pop_back();
     
-    // ll.insert(4,1);
+     ll.insert(4,1);
+
+    ll.search(1);
     
     ll.printLL();
     
