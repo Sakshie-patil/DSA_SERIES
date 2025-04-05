@@ -5,9 +5,9 @@ using namespace std;
 int diagonalSum(int matrix[4][4] , int n) {
       int sum=0;
     for(int i=0;i<n;i++) {
-        sum = sum + matrix[i][i];                //adds both primary diagonal elements to the sum
-         if(i != n-i-1) {                       //dosent add to the sum when primary diagoanal element and secondary elements are equal
-            sum = sum + matrix[i][n-i-1];       // adds secondary elements to the sum
+        sum = sum + matrix[i][i];                //adds all primary diagonal elements to the sum
+         if(i != n-i-1) {                       //dosent add to the sum when primary diagoanal element and secondary elements are equal (because we have already added it)
+            sum = sum + matrix[i][n-i-1];       // adds all secondary elements to the sum
         }
         }
     return sum;
