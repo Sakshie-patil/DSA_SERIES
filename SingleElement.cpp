@@ -13,7 +13,7 @@ int binarySearch(int arr[] , int size) {
      //corner cases
         if(mid==0 && arr[0]!=arr[1])
         return mid;  // return arr[0]
-        if(mid==size-1 && arr[size-1]!=arr[size-1]) 
+        if(mid==size-1 && arr[size-1]!=arr[size-2]) 
         return mid;  // return arr[size-1]
          
         if(arr[mid-1]!= arr[mid] && arr[mid]!=arr[mid+1] ) {
