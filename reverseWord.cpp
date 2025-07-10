@@ -13,6 +13,7 @@ string reverseWord(string s , int n) {
             i++;
         }
         reverse(word.begin(),word.end());
+        // for spaces
         if (!word.empty()) {
             if (!ans.empty()) {
                  ans = ans + " ";
