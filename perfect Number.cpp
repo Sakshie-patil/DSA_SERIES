@@ -1,3 +1,5 @@
+// addition of factors is equal to number
+
 #include<iostream>
 #include<cmath>
 using namespace std;
